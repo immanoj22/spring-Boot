@@ -38,4 +38,9 @@ public class JobProcessingController {
     public String remove(@RequestParam("jobId") long jobid){
         return jobApplicationService.remove(jobid);
     }
+
+    @GetMapping("job/search")
+    public List<JobApplicationEntity> search(@RequestParam("search") String value){
+        return jobApplicationService.search(value);
+    }
 }

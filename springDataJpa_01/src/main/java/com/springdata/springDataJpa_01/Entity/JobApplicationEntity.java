@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 @Entity
-@Name("jobs")
+@Table(name = "jobs")
 @Getter
 @Setter
 @NoArgsConstructor

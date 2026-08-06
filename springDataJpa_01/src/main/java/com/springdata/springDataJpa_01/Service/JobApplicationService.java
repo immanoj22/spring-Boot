@@ -28,7 +28,8 @@ public class JobApplicationService {
 
     public List<JobApplicationEntity> findallJobs(int page){
         int limit=20;
-        int offset=page-1*limit;
+        int offset=(page-1)*limit > 0 ? (page-1)*limit : 0;
+        System.out.println("offset"+limit+" "+offset);
         return  jobApplicationHook.findAllJob(limit,offset);
     }
 
@@ -44,5 +45,9 @@ public class JobApplicationService {
         }
 
         return "Failled deleting";
+    }
+
+    public List<JobApplicationEntity> search(String value) {
+        return jobApplicationHook.search(value);
     }
 }

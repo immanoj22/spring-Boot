@@ -48,4 +48,8 @@ public class JobApplicationHook  {
         }
         return false;
     }
+
+    public List<JobApplicationEntity> search(String value) {
+        return jobAppllicationRespository.searchValue(value);
+    }
 }
