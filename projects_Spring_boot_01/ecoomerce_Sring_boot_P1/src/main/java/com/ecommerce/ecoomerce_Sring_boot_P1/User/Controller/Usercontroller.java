@@ -15,9 +15,16 @@ public class Usercontroller {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/new")
+    @PostMapping("/signup")
     public ResponseEntity<UserResponseDTO> registerNewUser(@RequestBody UserRequestDTO userRequestDTO){
         UserResponseDTO userResponseDTO=userService.newUser(userRequestDTO);
         return new ResponseEntity<>(userResponseDTO, HttpStatus.CREATED);
+
+    }
+
+    @PostMapping("/signin")
+    public ResponseEntity<UserResponseDTO> loginUser(@RequestBody UserRequestDTO userRequestDTO){
+        UserResponseDTO userResponseDTO=userService.login(userRequestDTO);
+        return new ResponseEntity<>(userResponseDTO,HttpStatus.ACCEPTED);
     }
 }

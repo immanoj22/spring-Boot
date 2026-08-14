@@ -19,4 +19,20 @@ public class GlobalUserException {
     public ResponseEntity<String> handleUserExists(UserAlreadyExistException userAlreadyExistException){
         return new ResponseEntity<>(userAlreadyExistException.getMessage(),HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(UserNotExixt.class)
+    public ResponseEntity<String> handleUserNotExist(UserNotExixt userNotExixt){
+        return new ResponseEntity<>(userNotExixt.getMessage(),HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(UserPasswordWrong.class)
+    public ResponseEntity<String> handlepasswordIncorrect(UserPasswordWrong userPasswordWrong){
+        return new ResponseEntity<>(userPasswordWrong.getMessage(),HttpStatus.BAD_REQUEST);
+
+    }
+
+    @ExceptionHandler(CommonUserError.class)
+    public ResponseEntity<String> commonErrorUser(CommonUserError CommonUserError){
+        return  new ResponseEntity<>(CommonUserError.getMessage(),HttpStatus.BAD_REQUEST);
+    }
 }

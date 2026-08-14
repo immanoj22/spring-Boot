@@ -60,4 +60,13 @@ public class UserValidator {
             error.remove("email");
         }
     }
+
+    public void validateLoginUSer(UserRequestDTO userRequestDTO) {
+
+        checkValidEmail(userRequestDTO.getEmail());
+
+        if(error.size()<0){
+            throw new UserValidationException(error);
+        }
+    }
 }

@@ -25,7 +25,7 @@ public class User {
 
     private String refreshToken;
 
-    private int otp;
+    private String otp;
 
     private boolean is2FaEnabled;
     private LocalDateTime otpValidTill;
