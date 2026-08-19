@@ -1,7 +1,6 @@
 package com.security.spring_security_01.controller;
 
 import com.security.spring_security_01.model.DTO.UserReuestdto;
-import com.security.spring_security_01.model.Mapper.UserMapper;
 import com.security.spring_security_01.model.User;
 import com.security.spring_security_01.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
