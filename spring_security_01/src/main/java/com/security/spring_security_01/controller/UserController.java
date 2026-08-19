@@ -21,8 +21,8 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> loginUser(@RequestBody UserReuestdto userReuestdto){
-        User saveduser= userService.login(userReuestdto);
+    public ResponseEntity<UserReuestdto> loginUser(@RequestBody UserReuestdto userReuestdto){
+        UserReuestdto saveduser= userService.login(userReuestdto);
         return new ResponseEntity<>(saveduser, HttpStatus.OK);
     }
 }

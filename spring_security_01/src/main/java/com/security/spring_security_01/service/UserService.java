@@ -22,6 +22,10 @@ public class UserService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JWTService jwtService;
+
     BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder(12);
 
     public User newuser(User user){
@@ -29,7 +33,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User login(UserReuestdto userReuestdto){
+    public UserReuestdto login(UserReuestdto userReuestdto){
         UserMapper userMapper=new UserMapper();
         User requeser=userMapper.reuestToEntity(userReuestdto);
 
@@ -39,7 +43,9 @@ public class UserService {
         if(!authentication.isAuthenticated()){
            throw new UsernameNotExist("user not found");
         }
-        return  requeser;
+        String token=jwtService.genrateToken(requeser);
+        userReuestdto.setToken(token);
+        return  userReuestdto;
     }
 
 

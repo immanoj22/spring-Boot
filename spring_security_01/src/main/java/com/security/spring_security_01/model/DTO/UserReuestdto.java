@@ -13,4 +13,6 @@ public class UserReuestdto {
     private Integer age;
 
     private String password;
+
+    private String token;
 }
