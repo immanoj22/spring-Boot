@@ -25,3 +25,5 @@ cd springDataJpa_01
 
 ## Notes
 The folder names have some typos from when I created them and I have not renamed them. The more complete examples are `springDataJpa_01`, `JopApp_01` and `spring_security_01`; for a larger project see my other repos.
+
+Database and token settings come from the environment: `DB_PASSWORD` and `JWT_SECRET`.
